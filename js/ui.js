@@ -12,8 +12,12 @@ let movies=[];
 
 function createCard(film){
     return`
-    <div data-id="${film.id}" class="bg-gray-800 h-96 rounded-xl">
+    <div data-id="${film.id}" class="bg-gray-800 h-96 rounded-xl relative">
     <img src="${film.image}" alt="${film.title}" class="w-full h-72">
+    <button data-favori="${film.id}" class=" absolute top-3 right-3 z-10 text-2xl ">
+    <ion-icon name="heart"></ion-icon>
+    </button>
+
     <div class="p-4">
     <h2 class="text-xl font-bold">${film.title}</h2>
     <p class="text-gray-400">${film.releaseYear}</p>
@@ -51,6 +55,7 @@ function clickCard(){
         if(card){
             ouvrirModel(card.dataset.id)
         }
+        if(e.target.closest("[data-favori]"))return;
 
     });
 }
