@@ -1,12 +1,14 @@
-import{lireFilms}from"./api.js";
+import{getContent}from"./api.js";
 import{afficherCards}from"./ui.js";
 import { favoris } from "./favoris.js";
 async function afficheFilm() {
-    const films=await lireFilms();
-    // console.log(films)
-    console.log(films);
-    afficherCards(films);
-    favoris(films);
-    
+    try{
+        const films=await getContent();
+        afficherCards(films);
+        favoris(films);
+    }catch(error){
+        console.log(error.message);
+    }
+
 }
  afficheFilm();
