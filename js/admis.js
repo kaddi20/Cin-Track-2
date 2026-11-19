@@ -1,5 +1,6 @@
 import {getContent} from "./api.js";
 const tab =document.querySelector("#tabl-film");
+const message=document.querySelector("#message");
 let films=[];
 
 async function affichetab() {
@@ -27,4 +28,19 @@ function remplirTab(film){
         `
     ).join("");
 }
+async function messageErr(){
+     message.textContent='chargement...'
+    try{
+         films=await getContent();
+        remplirTab(films);
+        message.textContent='';
+    }catch(err){
+        message.textContent='Impossiple de charger les films';
+    }
+}
+
 affichetab();
+messageErr();
+
+
+
