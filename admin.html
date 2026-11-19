@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admin</title>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex flex-col">
+    <!--header-->
+    <header class="flex justify-between items-center w-full bg-gray-800 px-4 py-5 sm:px-8">
+        <h1 class="text-2xl text-white font-bold">CinéTrack</h1>
+        <a href="index.html" class=" text-gray-200 bg-red-600 py-2 px-6 rounded-lg">Catalogue</a>
+    </header>
+    <main class="p-8">
+        <h1 class="text-2xl font-bold mb-4">films et séries</h1>
+        <div >
+            <table class="w-full text-left border border-gray-700 ">
+                <thead>
+                    <tr class="bg-gray-800">
+                        <th class="p-3">Image</th>
+                        <th class="p-3">Titre</th>
+                        <th class="p-3">Type</th>
+                        <th class="p-3">Année</th>
+                        <th class="p-3">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tabl-film"></tbody>
+            </table>
+        </div>
+    </main>
+    <script type="module" src="js/admis.js"></script>
+    
+</body>
+</html>
