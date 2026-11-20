@@ -5,10 +5,11 @@ const form=document.querySelector("#form-list");
 const title=document.querySelector("#title");
 const type=document.querySelector("#type");
 const year=document.querySelector("#releaseYear");
-const image=document.querySelector("image");
-const duration=document.querySelector("seasons");
+const image=document.querySelector("#image");
+const duration=document.querySelector("#duration");
+const seasons=document.querySelector("#seasons");
 const genres=document.querySelector("#genres");
-const btn=document.querySelector("btn-envoyer");
+const btn=document.querySelector("#btn-envoyer");
 const titreForm=document.querySelector("#titre-form");
 
 let films=[];
