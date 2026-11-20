@@ -53,7 +53,8 @@ tab.addEventListener("click",async (e)=>{
             message.textContent="erreur dans la suppression";
         }
     }
-})
+});
+
 messageErr();
 affichetab();
 
