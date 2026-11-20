@@ -29,23 +29,52 @@
                 <tbody id="tabl-film"></tbody>
             </table>
         </div>
+
         <div class="bg-gray-800 p-4 rounded-xl border border-gray-700 max-w-xl mx-auto mt-4 ">
             <h2 id="titre-form" class="text-xl font-bold mb-4 text-center">Ajouter un film</h2>
-            <form id="titre-form" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <input id="title" type="text" placeholder="titre" class="p-3 rounded-lg border border-gray-700 bg-gray-900">
-                <select id="type" class="p-3 rounded-lg border border-gray-700 bg-gray-900">
-                    <option value="">Choisir le type</option>
-                    <option value="movie">Film</option>
-                    <option valur="series">Série</option>
-                </select>
-                <input id="releaseYear" type="number" placeholder="année" class="p-3 rounded-lg bg-gray-900 border border-gray-700">
-                <input id="image" type="url" placeholder="url de l'image" class="p-3 rounded-lg bg-gray-900 border border-gray-700 ">
-                <input id="duration" type="number" placeholder="la durée" class="p-3 rounded-lg bg-gray-900 border border-gray-700">
-                <input id="seasons" type="number" placeholder="nombre de saisons" class="p-3 rounded-lg bg-gray-900 border border-gray-700">
-                <div class="flex justify-center mt-2">
+            <form id="form-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="sm:col-span-2">
+                    <label for="title" class="block mb-2">Titre</label>
+                    <input id="title" type="text" placeholder="titre" class="w-full p-3 rounded-lg border border-gray-700 bg-gray-900">
+                     <p id="error-msg" class="erreur"></p>
+                </div>
+                <div>
+                    <label for="type" class="block mb-2">Type</label>
+                    <select id="type" class="w-full p-3 rounded-lg border border-gray-700 bg-gray-900">
+                        <option value="">Choisir le type</option>
+                        <option value="movie">Film</option>
+                        <option valur="series">Série</option>
+                    </select>
+                    <p id="err-type" class="erreur"></p>
+                </div>
+                <div>
+                    <label for="releaseYear" class="block mb-2">Année</label>
+                    <input id="releaseYear" type="number" placeholder="année" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700">
+                    <p id="err-annee" class="erreur"></p>
+                </div>
+                <div>
+                    <label for="image" class="block mb-2">Url de l'image</label>
+                    <input id="image" type="url" placeholder="url de l'image" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 ">
+                    <p id="err-img" class="erreur"></p>
+                </div>
+                <div>
+                    <label for="duration" class="block mb-2">Durée</label>                   
+                    <input id="duration" type="number" placeholder="la durée" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700">
+                    <p id="err-duration" class="erreur"></p>
+                </div>
+                <div>
+                    <label for="seasons" class="block mb-2">Nombre de saisons</label>
+                    <input id="seasons" type="number" placeholder="nombre de saisons" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700">
+                    <p id="err-seasons" class="erreur"></p>
+                </div>
+                <div>
+                    <label for="genres" class="block mb-2">Genres</label>
+                    <input id="genres" type="text" placeholder="Actin,Drama,Horror" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700">
+                    <p id="err-duration" class="erreur"></p>
+                </div>
+                <div class="sm:col-span-2 flex justify-center mt-2">
                     <button id="btn-envoyer" type="submit" class="bg-blue-700 p-3 py-2 px-6 rounded-lg">Ajouter</button>
                 </div>
-                
                 
             </form>
         </div>

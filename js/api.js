@@ -14,7 +14,7 @@ export const createContent =(data)=>{
     return request("",{method:"POST",body:JSON.stringify(data)});
 }
 export const updateContent= (data, id)=>{
-    return request("/" +id,{method:"PATCH",body:JSON.stringify(data)});
+    return request("/" +id,{method:"PUT",body:JSON.stringify(data)});
 }
 export const deleteContent= (id)=>{
     return request("/" +id,{method:"DELETE"})
