@@ -1,4 +1,4 @@
-import {getContent} from "./api.js";
+import {deleteContent, getContent} from "./api.js";
 const tab =document.querySelector("#tabl-film");
 const message=document.querySelector("#message");
 let films=[];
@@ -31,16 +31,31 @@ function remplirTab(film){
 async function messageErr(){
      message.textContent='chargement...'
     try{
-         films=await getContent();
+        films=await getContent();
         remplirTab(films);
         message.textContent='';
     }catch(err){
         message.textContent='Impossiple de charger les films';
     }
 }
-
-affichetab();
+tab.addEventListener("click",async (e)=>{
+    if(e.target.classList.contains("btn-supp")){
+        const id =e.target.dataset.id;
+        if(!confirm("supprime le film ?"))return;
+        try{
+            await deleteContent(id);
+            films=films.filter( f=>f.id !=id );
+            remplirTab(films);
+            message.textContent="supprimer avec succès";
+            
+        }catch(err){
+            console.log(err);
+            message.textContent="erreur dans la suppression";
+        }
+    }
+})
 messageErr();
+affichetab();
 
 
 
